@@ -5,11 +5,15 @@ class User
     public $name;
     public $surname;
     public $email;
+    private $id;
+
 
     function __construct($name,$surname, $email) {
         $this->setName($name);
         $this->setSurame($surname);
         $this->setEmail($email);
+
+        $this->generateUserId();
         
       }
 
@@ -43,4 +47,23 @@ class User
     {
         return $this->email;
     }
+
+    private function generateUserId() {
+        $string = $this->name . $this->email . time();
+        $idLength = 12;
+    
+        $userId = "";
+    
+        while (strlen($userId) <  $idLength) {
+          $randNum = rand(0, strlen($string));
+          $char = substr($string, $randNum, 1);
+          $invalidChars = [".", "@"];
+    
+          if (!in_array($char, $invalidChars)) {
+            $userId .= $char;
+          }
+        }
+    
+        $this->id = strtolower($userId);
+      }
 }
