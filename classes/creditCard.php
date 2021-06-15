@@ -16,7 +16,7 @@ class CreditCard
     }
 
     function setExpirationDate($value){
-        if($value < date("d-m-Y")){
+        if(strtotime(date($value)) < strtotime(date("d-m-Y"))){
             $this->expirationDate ="La carta è scaduta";
         }else{
             $this->expirationDate =$value;
