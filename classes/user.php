@@ -5,6 +5,7 @@ class User
     public $name;
     public $surname;
     public $email;
+    public $creditCard;
     private $id;
 
 
@@ -48,8 +49,14 @@ class User
         return $this->email;
     }
 
+    public function insertCreditCard($c){
+            $this->creditCard = $c->accountholder . " " . $c->expirationDate;
+    }
+
+
+
     private function generateUserId() {
-        $string = $this->name . $this->email . time();
+        $string = $this->name . $this->email;
         $idLength = 12;
     
         $userId = "";
@@ -64,6 +71,6 @@ class User
           }
         }
     
-        $this->id = strtolower($userId);
+        $this->id = strtolower($userId). time();
       }
 }
