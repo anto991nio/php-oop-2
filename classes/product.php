@@ -22,4 +22,12 @@ class Product
     function setPrice($value){
         $this->price =$value;
     }
+
+    public function renderProduct() {
+        echo "<h2>Nome Prodotto:" . " " . $this->name . "</h2>";
+        echo "<h2>Brand:" . " " . $this->brand .  "</h2>";
+        echo "<p>Prezzo:" . " " . $this->price .  "</p>";
+      
+
+      }
 }

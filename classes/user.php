@@ -53,6 +53,16 @@ class User
             $this->creditCard = $c->accountholder . " " . $c->expirationDate;
     }
 
+    public function renderUser() {
+        echo "<h2>Nome Cliente:" . " " . $this->name . "</h2>";
+        echo "<h2>Cognome Cliente:" . " " . $this->surname .  "</h2>";
+        echo "<p>Email:" . " " . $this->email .  "</p>";
+        echo "<p>Dati Carta di Credito:" . " " . $this->creditCard .  "</p>";
+        echo "<p>ID:" . " " . $this->id .  "</p>";
+        
+
+      }
+
 
 
     private function generateUserId() {

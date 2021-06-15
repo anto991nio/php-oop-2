@@ -8,7 +8,7 @@ include  "./classes/product.php";
 
 
 $user1= new User("antonio", "Cardone", "antonio@gmail.com");
-$userPremium= new Premium("antonio", "Cardone", "antonio@gmail.com",1);
+$userPremium= new Premium("Mario", "Rossi", "mariorossi@gmail.com",10);
 $cartaDiCredito= new CreditCard("Antonio Cardone", "28-08-2022");
 $prodotto= new Product("X", "IPhone", "$999.00");
 
@@ -16,9 +16,13 @@ $user1->insertCreditCard($cartaDiCredito);
 $userPremium->insertCreditCard($cartaDiCredito);
 
 
-var_dump($user1);
-var_dump($userPremium);
-var_dump($prodotto);
+$user1->renderUser();
+echo "<hr>";
+$userPremium->renderUserPremium();
+echo "<hr>";
+$prodotto->renderProduct();
+echo "<hr>";
+
 
 
 

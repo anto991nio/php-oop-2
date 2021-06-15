@@ -22,4 +22,11 @@ class Premium extends User
         $this->discount = $value * 5;
 
     }
+
+    public function renderUserPremium() {
+        parent::renderUser();
+        echo "<p>Sconto applicato:" . " " . $this->discount .  "</p>";
+        echo "<p>Iscritto da anni:" . " " . $this->signedYears .  "</p>";
+
+      }
 }
