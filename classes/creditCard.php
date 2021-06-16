@@ -12,7 +12,10 @@ class CreditCard
     }
 
     function setAccountholder($value){
-        $this->accountholder =$value;
+        if (!is_string($value)) {
+            throw new Exception("Il nome inserito non è valido");
+          }
+          return $this->accountholder = $value;
     }
 
     function setExpirationDate($value){

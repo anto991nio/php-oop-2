@@ -6,7 +6,7 @@ class Premium extends User
     public $signedYears;
 
 
-    function __construct($name,$surname, $email,$signedYears )
+    function __construct($name,$surname, $email, $signedYears )
     {
         parent::__construct($name, $surname, $email);
         $this->setSignedYears($signedYears);
